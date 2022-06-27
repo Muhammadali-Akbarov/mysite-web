@@ -1,0 +1,206 @@
+{% load static %}
+<header class="wrapper bg-soft-primary">
+  <!-- /.alert -->
+  <nav class="navbar navbar-expand-lg classic transparent navbar-light">
+    <div class="container flex-lg-row flex-nowrap align-items-center">
+      <div class="navbar-brand w-100">
+        <a href="{% url 'home' %}">
+          <img
+            style="height: 10%; width: 10%"
+            src="{% static 'assets/img/logo_me.png' %}"
+            srcset="{% static 'assets/img/logo_me.png' %}"
+            alt="Muhammadali LIVE"
+          />
+        </a>
+      </div>
+      <div class="navbar-collapse offcanvas-nav">
+        <div class="offcanvas-header d-lg-none d-xl-none">
+          <a href=""><img alt="" /></a>
+          <button
+            type="button"
+            class="btn-close btn-close-white offcanvas-close offcanvas-nav-close"
+            aria-label="Close"
+          ></button>
+        </div>
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'about-my-self' %}">About</a>
+            <ul class="dropdown-menu mega-menu mega-menu-dark mega-menu-img">
+              <li class="mega-menu-content">
+                <ul
+                  class="row row-cols-1 row-cols-lg-6 gx-0 gx-lg-4 gy-lg-2 list-unstyled"
+                >
+                  <li class="col">
+                    <a class="dropdown-item" href="{% url 'about-my-self' %}">
+                      <figure class="rounded lift d-none d-lg-block">
+                        <img
+                          src="https://telegra.ph//file/75770e86b623cc54b7232.jpg"
+                          srcset="
+                            https://telegra.ph//file/75770e86b623cc54b7232.jpg
+                          "
+                          alt=""
+                        />
+                      </figure>
+                    </a>
+                  </li>
+                  <li class="col">
+                    <a class="dropdown-item" href="{% url 'about-my-self' %}">
+                      <figure class="rounded lift d-none d-lg-block">
+                        <img
+                          src="https://media-exp1.licdn.com/dms/image/C4D1BAQGrA_PX40nBFQ/company-background_10000/0/1627842078774?e=2159024400&v=beta&t=uuf3qkoCzlaP_qpsfyUIOq0MOGDGzZVE0A0iMJuO-F4"
+                          srcset="
+                            https://media-exp1.licdn.com/dms/image/C4D1BAQGrA_PX40nBFQ/company-background_10000/0/1627842078774?e=2159024400&v=beta&t=uuf3qkoCzlaP_qpsfyUIOq0MOGDGzZVE0A0iMJuO-F4
+                          "
+                          alt=""
+                        />
+                      </figure>
+                    </a>
+                  </li>
+                  <li class="col">
+                    <a class="dropdown-item" href="{% url 'about-my-self' %}">
+                      <figure class="rounded lift d-none d-lg-block">
+                        <img
+                          src="https://xabar.uz/static/crop/5/6/920__95_560502105.jpg"
+                          srcset="
+                            https://xabar.uz/static/crop/5/6/920__95_560502105.jpg
+                          "
+                          alt=""
+                        />
+                      </figure>
+                    </a>
+                  </li>
+                </ul>
+                <!--/.row -->
+              </li>
+              <!--/.mega-menu-content-->
+            </ul>
+            <!--/.dropdown-menu -->
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="{% url 'my-projects' %}">Projects</a>
+
+            <ul class="dropdown-menu">
+              <li class="dropdown">
+                <a
+                  class="dropdown-item dropdown-toggle"
+                  href="{% url 'my-projects' %}"
+                  >WEB Applications</a
+                >
+                {% comment %}
+                <ul class="dropdown-menu">
+                  <li class="nav-item">
+                    <a class="dropdown-item" href="services.html">Services I</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="dropdown-item" href="services2.html"
+                      >Services II</a
+                    >
+                  </li>
+                </ul>
+                {% endcomment %}
+              </li>
+              <li class="dropdown">
+                <a
+                  class="dropdown-item dropdown-toggle"
+                  href="{% url 'my-projects-bot' %}"
+                  >BOT Applications</a
+                >
+                {% comment %}
+                <ul class="dropdown-menu">
+                  <li class="nav-item">
+                    <a class="dropdown-item" href="about.html">About I</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="dropdown-item" href="about2.html">About II</a>
+                  </li>
+                </ul>
+                {% endcomment %}
+              </li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="https://t.me/s/ABC_PyEng">Blog</a>
+
+            <ul class="dropdown-menu mega-menu mega-menu-dark mega-menu-img">
+              <li class="mega-menu-content">
+                <ul
+                  class="row row-cols-1 row-cols-lg-6 gx-0 gx-lg-4 gy-lg-2 list-unstyled"
+                >
+                  <li class="col">
+                    <a
+                      class="dropdown-item"
+                      target="_blank"
+                      href="https://t.me/s/ABC_PyEng"
+                    >
+                      <figure class="rounded lift d-none d-lg-block">
+                        <img
+                          src="https://play-lh.googleusercontent.com/4Y4oWf0IVCj-nqtqZNpXnCtK-wi5I2XOkGEdA43knOwelyEL_g4KCbtcNjHzFIEXNAsm=w412-h220-rw"
+                          srcset="
+                            https://play-lh.googleusercontent.com/4Y4oWf0IVCj-nqtqZNpXnCtK-wi5I2XOkGEdA43knOwelyEL_g4KCbtcNjHzFIEXNAsm=w412-h220-rw
+                          "
+                          alt=""
+                        />
+                      </figure>
+                      <span class="d-lg-none">Telegram Channel</span>
+                    </a>
+                  </li>
+                  <li class="col">
+                    <a
+                      target="_blank"
+                      class="dropdown-item"
+                      href="https://youtu.be/lhKRgHSpbZw"
+                    >
+                      <figure class="rounded lift d-none d-lg-block">
+                        <img
+                          src="https://play-lh.googleusercontent.com/vA4tG0v4aasE7oIvRIvTkOYTwom07DfqHdUPr6k7jmrDwy_qA_SonqZkw6KX0OXKAdk"
+                          alt=""
+                        />
+                      </figure>
+                      <span class="d-lg-none">YouTube Channel</span>
+                    </a>
+                  </li>
+                </ul>
+                <!--/.row -->
+              </li>
+              <!--/.mega-menu-content-->
+            </ul>
+            <!--/.dropdown-menu -->
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'contact-me' %}">Contact</a>
+
+            <!--/.dropdown-menu -->
+          </li>
+        </ul>
+        <!-- /.navbar-nav -->
+      </div>
+      <!-- /.navbar-collapse -->
+      <!-- /.navbar-collapse -->
+      <div class="navbar-other ms-lg-4">
+        <ul
+          class="navbar-nav flex-row align-items-center ms-auto"
+          data-sm-skip="true"
+        >
+          <li class="nav-item d-lg-none">
+            <div class="navbar-hamburger">
+              <button
+                class="hamburger animate plain"
+                data-toggle="offcanvas-nav"
+              >
+                <span></span>
+              </button>
+            </div>
+          </li>
+        </ul>
+        <!-- /.navbar-nav -->
+      </div>
+
+      <!-- /.navbar-other -->
+    </div>
+    <!-- /.container -->
+  </nav>
+  <!-- /.navbar -->
+</header>
+<!-- /header -->

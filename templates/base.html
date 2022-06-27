@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% load static %}
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta
+      name="description"
+      content="Hello and welome to my personal web page :)"
+    />
+    <meta
+      name="keywords"
+      content="muhammadali1717, muhammadali_abc, muhammadali-akbarov, muhammadali, muhammadali-live, python-django developer"
+    />
+    <meta
+      property="og:image"
+      href="https://itstars.uz/wp-content/uploads/2021/10/telecommuting-animate.svg"
+    />
+    <meta name="author" content="Muhammadali_abc" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="article" />
+    <meta
+      property="og:title"
+      content="Biznesintellekt dasturiga taklif qilamiz!"
+    />
+    <meta property="og:image:width" content="2560" />
+    <meta property="og:image:height" content="1294" />
+    <meta property="og:url" content="https://muhammadali-live.uz/" />
+    <meta property="og:site_name" content="Muhammadali-live" />
+
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="icon" href="{% static 'assets/img/abc_ico.png' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/plugins.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/colors/aqua.css' %}" />
+    <link
+      rel="preload"
+      href="{% static 'assets/css/fonts/thicccboi.css' %}"
+      as="style"
+      onload="this.rel='stylesheet'"
+    />
+  </head>
+
+  <body>
+    <div class="content-wrapper">
+      {% include 'sections/header.html' %} {% block content %} {% endblock %}
+      {%include 'sections/footer.html' %}
+    </div>
+    {% comment %}
+    <div class="spinner-border text-primary" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+    {% endcomment %}
+    <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+      integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+      crossorigin="anonymous"
+    ></script>
+    <script src="{% static 'assets/js/plugins.js' %}"></script>
+    <script src="{% static 'assets/js/theme.js' %}"></script>
+  </body>
+</html>

@@ -1,0 +1,123 @@
+{% extends "base.html" %}
+{% block title %}Contact{% endblock title %}
+{% load static %}
+{% block content %}
+ {% if messages %}
+            <center>
+                  <ul class="messages">
+                    {% for message in messages %}
+                    <li {% if message.tags %} class="alert alert-{{ message.tags }}"{% endif %}>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            </center>
+  {% endif %}
+<section class="wrapper image-wrapper bg-image bg-overlay bg-overlay-400 text-white" data-image-src="{% static '/assets/img/photos/bg3.jpg' %}">
+    <div class="container pt-17 pb-20 pt-md-19 pb-md-21 text-center">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <h1 class="display-1 mb-3 text-white">Get in Touch</h1>
+          <nav class="d-inline-block" aria-label="breadcrumb">
+         
+          </nav>
+          <!-- /nav -->
+        </div>
+        <!-- /column -->
+      </div>
+      <!-- /.row -->
+    </div>
+    <!-- /.container -->
+</section>
+      
+ <!-- /section -->
+ <section class="wrapper bg-light angled upper-end">
+    <div class="container pb-11">
+      <div class="row mb-14 mb-md-16">
+        <div class="col-xl-10 mx-auto mt-n19">
+          <div class="card">
+            <div class="row gx-0">
+              <div class="col-lg-6 align-self-stretch">
+                <div class="map map-full rounded-top rounded-lg-start">
+                  {% comment %} <iframe href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2995.12738365593!2d69.21195231539072!3d41.34958487926765!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8c3e1181b893%3A0x49fb8f1128f5bbde!2z0YPQu9C40YbQsCDQotCw0LvQsNCx0LDQu9Cw0YAsINCi0LDRiNC60LXQvdGCLCDQo9C30LHQtdC60LjRgdGC0LDQvQ!5e0!3m2!1sru!2s!4v1634770820474!5m2!1sru!2s" style="width:100%; height: 100%; border:0" allowfullscreen></iframe> {% endcomment %}
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2995.12738365593!2d69.21195231539072!3d41.34958487926765!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8c3e1181b893%3A0x49fb8f1128f5bbde!2z0YPQu9C40YbQsCDQotCw0LvQsNCx0LDQu9Cw0YAsINCi0LDRiNC60LXQvdGCLCDQo9C30LHQtdC60LjRgdGC0LDQvQ!5e0!3m2!1sru!2s!4v1634770820474!5m2!1sru!2s" style="width:100%; height: 100%; border:0" allowfullscreen></iframe>
+                
+                </div>
+                <!-- /.map -->
+              </div>
+       
+              <!--/column -->
+              <div class="col-lg-6">
+                <div class="p-10 p-md-11 p-lg-14">
+                  <div class="d-flex flex-row">
+                    <div>
+                      <div class="icon text-primary fs-28 me-4 mt-n1"> <i class="uil uil-location-pin-alt"></i> </div>
+                    </div>
+                    <div class="align-self-start justify-content-start">
+                      <h5 class="mb-1">Address</h5>
+                      <address>Olmazor St. 96A,Toshkent  <br class="d-none d-md-block" />Toshkent Uzbekistan</address>
+                    </div>
+                  </div>
+                  <!--/div -->
+                  <div class="d-flex flex-row">
+                    <div>
+                      <div class="icon text-primary fs-28 me-4 mt-n1"> <i class="uil uil-phone-volume"></i> </div>
+                    </div>
+                    <div>
+                      <h5 class="mb-1">Phone</h5>
+                      <p>+ 998 (88) 835 - 17 - 17  <br class="d-none d-md-block" />+ 998 (33) 677 - 27 - 17 </p>
+                    </div>
+                  </div>
+                  <!--/div -->
+                  <div class="d-flex flex-row">
+                    <div>
+                      <div class="icon text-primary fs-28 me-4 mt-n1"> <i class="uil uil-envelope"></i> </div>
+                    </div>
+                    <div>
+                      <h5 class="mb-1">E-mail</h5>
+                      <p class="mb-0"><a href="mailto:sandbox@email.com" class="link-body">muhammadali17abc@gmail.com</a></p>
+                      <p class="mb-0"><a href="mailto:help@sandbox.com" class="link-body">muhammadali17me@gmail.com</a></p>
+                    </div>
+                  </div>
+                  <!--/div -->
+                </div>
+                <!--/div -->
+              </div>
+              <!--/column -->
+            </div>
+            <!--/.row -->
+          </div>
+          <!-- /.card -->
+        </div>
+        <!-- /column -->
+      </div>
+      <!-- /.row -->
+    </div>
+
+
+    <div class="row">
+        <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
+
+          <p class="lead text-center mb-10">Reach out to us from our contact form and we will get back to you shortly.</p>
+          <form class="contact-form" method="POST">
+            {% csrf_token %} 
+            <div class="messages"></div>
+            <div class="row gx-4">
+                {{form}}
+            </div>
+            <div class="col-12 text-center">
+                <input type="submit" class="btn btn-primary rounded-pill btn-send mb-3 mt-5" value="Send message">
+              </div>
+            <!-- /.row -->
+          </form>
+          <!-- /form -->
+        </div>
+        <!-- /column -->
+      </div>
+      <!-- /.row -->
+    </div>
+    <!-- /.container -->
+  </section>
+  <!-- /section -->
+</div>
+<!-- /.content-wrapper -->
+ 
+{% endblock %}

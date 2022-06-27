@@ -1,0 +1,2 @@
+heroku config:set DISABLE_COLLECTSTATIC=1
+heroku run ps:scale web=1
