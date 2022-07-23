@@ -14,7 +14,7 @@ SECRET_KEY = env.str("SECRET_KEY")
 
 DEBUG = False
 
-ALLOWED_HOSTS = ['.herokuapp.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['.herokuapp.com', 'localhost', '127.0.0.1', '0.0.0.0', 'muhammadali-live.uz', '46.101.206.72']
 
 
 INSTALLED_APPS = [
