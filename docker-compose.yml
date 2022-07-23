@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+  app:
+    build: .
+
+    depends_on:
+      - db
+    
+    environment:
+      - POSTGRES_ENGINE=django.db.backends.postgresql_psycopg2
+      - POSTGRES_DB=mysite
+      - POSTGRES_USER=myprojectuser
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_HOST=db
+      - POSTGRES_PORT=5432
+    ports:
+      - 8000:8000
+  
+  db:
+    image: postgres:12.11
+    environment:
+     - POSTGRES_DB=mysite
+     - POSTGRES_USER=myprojectuser
+     - POSTGRES_PASSWORD=password
+
+    ports:
+      - 5430:5432
+    volumes:
+      - ./data/db:/var/lib/postgresql/data
