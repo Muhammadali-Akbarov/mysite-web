@@ -1,0 +1,28 @@
+[Unit]
+Description=gunicorn daemon
+Requires=gunicorn.socket
+After=network.target
+
+[Service]
+User=root
+Group=www-data
+WorkingDirectory=/root/mysite
+ExecStart=/root/mysite/venv/bin/gunicorn \
+          --access-logfile - \
+          --workers 3 \
+          --bind unix:/run/gunicorn.sock \
+          mysite.wsgi:application
+
+Environment="DEBUG=your-debug-mode"
+Environment="SECRET_KEY=your-secret-key"
+Environment="TELEBOT_URL=telegram-bot-url"
+Environment="TELEBOT_TOKEN=your-telegram-token"
+Environment="POSTGRES_ENGINE=your-postgres-engine"
+Environment="POSTGRES_DB=your-postgres-db"
+Environment="POSTGRES_USER=your-postgres-user"
+Environment="POSTGRES_PASSWORD=your-postgres-password"
+Environment="POSTGRES_HOST=your-postgres-host"
+Environment="POSTGRES_PORT=your-postgres-port"
+
+[Install]
+WantedBy=multi-user.target
