@@ -22,6 +22,12 @@ jobs:
           TELEBOT_URL: ${{ env.TELEBOT_URL }}
           TELEBOT_TOKEN: ${{ env.TELEBOT_TOKEN }}
           TELEBOT_CHAT_ID: ${{ env.TELEBOT_CHAT_ID }}
+          POSTGRES_ENGINE: ${{ env.POSTGRES_ENGINE }}
+          POSTGRES_DB: ${{ env.POSTGRES_DB }}
+          POSTGRES_USER: ${{ env.POSTGRES_USER }}
+          POSTGRES_PASSWORD: ${{ env.POSTGRES_PASSWORD }}
+          POSTGRES_HOST: ${{ env.POSTGRES_HOST }}
+          POSTGRES_PORT: ${{ env.POSTGRES_PORT }}
         run: python3 manage.py test
 
 
