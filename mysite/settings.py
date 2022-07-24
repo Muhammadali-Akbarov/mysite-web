@@ -14,8 +14,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = env.str("SECRET_KEY")
 
 DEBUG = False
+APP_ENV = env.str("APP_ENV", 'production')
 
-ALLOWED_HOSTS = ['.herokuapp.com', 'localhost', '127.0.0.1', '0.0.0.0', 'www.muhammadali-live.uz', 'muhammadali-live.uz', '46.101.206.72']
+ALLOWED_HOSTS = ['.herokuapp.com', 'localhost', '127.0.0.1', '0.0.0.0',
+                 'www.muhammadali-live.uz', 'muhammadali-live.uz', '46.101.206.72']
 
 
 INSTALLED_APPS = [
@@ -69,23 +71,33 @@ TEMPLATES = [
 WSGI_APPLICATION = 'mysite.wsgi.application'
 
 
-DATABASES = {
-    'default': {
-        'ENGINE': env.str('POSTGRES_ENGINE'),
-        'NAME': env.str('POSTGRES_DB'),
-        'USER': env.str('POSTGRES_USER'),
-        'PASSWORD': env.str('POSTGRES_PASSWORD'),
-        'HOST': env.str('POSTGRES_HOST'),
-        'PORT': env.str('POSTGRES_PORT'),
-        'TEST': {
-            'NAME': 'test_development',
-        },
+if APP_ENV == 'development':
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
     }
-}
+
+
+if APP_ENV == 'production':
+    DATABASES = {
+        'default': {
+            'ENGINE': env.str('POSTGRES_ENGINE'),
+            'NAME': env.str('POSTGRES_DB'),
+            'USER': env.str('POSTGRES_USER'),
+            'PASSWORD': env.str('POSTGRES_PASSWORD'),
+            'HOST': env.str('POSTGRES_HOST'),
+            'PORT': env.str('POSTGRES_PORT'),
+            'TEST': {
+                'NAME': 'test_development',
+            },
+        }
+    }
+
 
 if 'test' in sys.argv or 'test_coverage' in sys.argv:
     DATABASES['default']['ENGINE'] = 'django.db.backends.sqlite3'
-
 
 
 AUTH_PASSWORD_VALIDATORS = [
