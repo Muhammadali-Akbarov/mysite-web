@@ -16,6 +16,12 @@ jobs:
       - name: Install Requirements
         run: pip3 install -r requirements.txt
       - name: Run Tests
+        env:
+          DEBUG: ${{ env.DEBUG }}
+          SECRET_KEY: ${{ env.SECRET_KEY }}
+          TELEBOT_URL: ${{ env.TELEBOT_URL }}
+          TELEBOT_TOKEN: ${{ env.TELEBOT_TOKEN }}
+          TELEBOT_CHAT_ID: ${{ env.TELEBOT_CHAT_ID }}
         run: python3 manage.py test
 
 
