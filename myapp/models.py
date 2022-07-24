@@ -1,6 +1,5 @@
 from django.db import models
-from django.db.models.expressions import F
-from django.shortcuts import render
+
 
 # Create your models here.
 
@@ -13,7 +12,6 @@ class Comments(models.Model):
 
     def __str__(self):
         return self.name
-
 
     @property
     def imageURL(self): 

@@ -14,8 +14,8 @@ jobs:
         with:
           python-version: 3.8
       - name: Install Requirements
-        run: pip install -r requirements.txt
+        run: pip3 install -r requirements.txt
       - name: Run Tests
-        run: pytest
+        run: python3 manage.py test
 
 

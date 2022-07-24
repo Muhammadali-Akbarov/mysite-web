@@ -73,11 +73,11 @@ coverage.xml
 
 # Sphinx documentation
 docs/_build/
-
+.pytest_cache/
 # PyBuilder
 target/
 
-
+# .pytest_cache
 ### Django ###
 *.log
 *.pot
