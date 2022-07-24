@@ -44,6 +44,6 @@ jobs:
         password: ${{ secrets.PASSWORD }}
         script: |
           cd mysite
-          git pull origin master
+          git pull origin main
           systemctl restart gunicorn.service
         
