@@ -1,7 +1,7 @@
 # About mysite project
 My awesome web site<br>
 Live website - https://www.muhammadali-live.uz/ <hr><br>
-<img src="./static/images/intro.jpg">
+<img style="width:100%;" src="./static/images/intro.jpg">
 
 # Installation
 * 1 - clone repo https://github.com/Muhammadali-Akbarov/mysite.git
