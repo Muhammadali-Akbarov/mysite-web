@@ -45,5 +45,6 @@ jobs:
         script: |
           cd mysite
           git pull origin main
+          python3 manage.py migrate
           systemctl restart gunicorn.service
         

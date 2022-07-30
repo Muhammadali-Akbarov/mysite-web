@@ -31,7 +31,7 @@ class MyResume(models.Model):
 
 
 class ProjectCategory(models.Model):
-    name = models.CharField(max_length=255,null=True,blank=False)
+    name = models.CharField(max_length=500,null=True,blank=False)
 
 
     def __str__(self):
