@@ -49,7 +49,7 @@ class MyProjects(models.Model):
     side        = models.CharField(blank=False,null=True,choices=SIDE_CHOICES,max_length=5)
     image       = models.ImageField(null=True,blank=False)
     title       = models.CharField(max_length=27,null=True,blank=False)
-    body        = models.CharField(max_length=96,null=True,blank=False)
+    body        = models.CharField(max_length=500,null=True,blank=False)
     link        = models.CharField(max_length=255,null=True,blank=False)
     published   = models.DateTimeField(auto_now_add=True)
 
