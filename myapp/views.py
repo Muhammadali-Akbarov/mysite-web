@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.shortcuts import render
 from django.contrib import messages
 from django.shortcuts import redirect
@@ -8,21 +9,22 @@ from .forms import GetInTouchForm
 
 from .models import MyBots
 from .models import Comments
-from .models import MyYouTube
 from .models import MyProjects
 
 from .libs.telebot import telebot
 
 def homeView(request):
-
-    video = MyYouTube.objects.first()
-    context = {
-        "videos": video
-    }
-    return render(request, 'myapp/home.html', context)
+    if settings.APP_ENV == 'production':
+        text: str = "New visitor\n\n"
+        text += request.META.get('HTTP_USER_AGENT')
+        telebot.send_message(text)
+        
+    return render(request, 'myapp/home.html')
 
 
 def aboutView(request):
+    
+    
     items = Comments.objects.all()
 
     if request.POST:
