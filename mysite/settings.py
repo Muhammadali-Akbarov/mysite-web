@@ -1,9 +1,9 @@
+"""All mysite Configuration Here"""
 import os
 import sys
 
 from pathlib import Path
 
-"""Env configs"""
 from environs import Env
 
 env = Env()
@@ -13,7 +13,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = env.str("SECRET_KEY")
 
-DEBUG = False
+DEBUG = env.bool("DEBUG",False)
 APP_ENV = env.str("APP_ENV", 'production')
 
 ALLOWED_HOSTS = ['.herokuapp.com', 'localhost', '127.0.0.1', '0.0.0.0',

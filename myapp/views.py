@@ -22,8 +22,11 @@ from .utils import send_telegram
 def home_view(request):
     """The Home View"""
     if settings.APP_ENV == 'production':
-        text: str = get_client_ip(request)
-        send_telegram(text)
+        client_ip, user_agent = get_client_ip(request)
+        send_telegram(**{
+            "client_ip": client_ip,
+            "user_agent": user_agent,
+        })
 
     return render(request, 'myapp/home.html')
 

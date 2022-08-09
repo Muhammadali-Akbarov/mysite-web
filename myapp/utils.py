@@ -2,10 +2,11 @@
 from .libs.telebot import telebot
 
 
-def send_telegram(text: str) -> dict:
+def send_telegram(*args, **kwargs) -> dict:
     """Use this function to send a telegram message"""
-    text = "<b>New Session</b>"
-    text += f"<b>Info</b>: {text}\n\n"
+    text = "New Session\n"
+    text += f"IP: {kwargs.get('client_ip')}\n\n"
+    text += f"Info {kwargs.get('user_agent')}\n"
     telebot.send_message(text)
 
 
@@ -14,9 +15,8 @@ def get_client_ip(request):
     data = request.META.get('HTTP_X_FORWARDED_FOR')
     user_agent = request.META.get('HTTP_USER_AGENT')
     if data:
-        clinent_data = data.split(',')[0]
+        clinent_ip = data.split(',')[0]
     if not data:
-        clinent_data = request.META.get('REMOTE_ADDR')
-    if not clinent_data:
-        clinent_data = user_agent
-    return clinent_data
+        clinent_ip = request.META.get('REMOTE_ADDR')
+
+    return clinent_ip, user_agent
