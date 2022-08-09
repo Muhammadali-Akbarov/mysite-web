@@ -45,6 +45,8 @@ jobs:
         script: |
           cd mysite
           git pull origin main
+          source venv/bin/activate && source env/bin/activate
           python3 manage.py migrate
           systemctl restart gunicorn.service
+          deactivate
         

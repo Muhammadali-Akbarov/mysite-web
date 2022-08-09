@@ -12,8 +12,11 @@ def send_telegram(text: str) -> dict:
 def get_client_ip(request):
     """Use this function to get a client IP"""
     data = request.META.get('HTTP_X_FORWARDED_FOR')
+    user_agent = request.META.get('HTTP_USER_AGENT')
     if data:
-        clinent_ip = data.split(',')[0]
+        clinent_data = data.split(',')[0]
     if not data:
-        clinent_ip = request.META.get('REMOTE_ADDR')
-    return clinent_ip
+        clinent_data = request.META.get('REMOTE_ADDR')
+    if not clinent_data:
+        clinent_data = user_agent
+    return clinent_data
