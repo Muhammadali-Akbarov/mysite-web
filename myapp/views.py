@@ -1,3 +1,5 @@
+"""Views for myapp"""
+
 from django.conf import settings
 from django.shortcuts import render
 from django.contrib import messages
@@ -13,18 +15,21 @@ from .models import MyProjects
 
 from .libs.telebot import telebot
 
-def homeView(request):
+from .utils import get_client_ip
+from .utils import send_telegram
+
+
+def home_view(request):
+    """The Home View"""
     if settings.APP_ENV == 'production':
-        text: str = "New visitor\n\n"
-        text += request.META.get('HTTP_USER_AGENT')
-        telebot.send_message(text)
-        
+        text: str = get_client_ip(request)
+        send_telegram(text)
+
     return render(request, 'myapp/home.html')
 
 
-def aboutView(request):
-    
-    
+def about_view(request):
+    """Th About View"""
     items = Comments.objects.all()
 
     if request.POST:
@@ -45,24 +50,28 @@ def aboutView(request):
     return render(request, 'myapp/about.html', context)
 
 
-def commentRemove(request, pk):
-    comment = Comments.objects.get(id=pk)
-
-    comment.delete()
+def comment_remove_view(request, primary_key):
+    """The Comment Remove View"""
+    if request:
+        comment = Comments.objects.get(id=primary_key)
+        comment.delete()
 
     return redirect('about-my-self')
 
 
-def myResumeDownloadView(request):
+def my_resume_download_view(request):
+    """The My Resume Download View
+        uses for download resume."""
+    if request:
+        filename = './static/resume.pdf'
+        response = FileResponse(open(filename, 'rb'))
 
-    filename = './static/resume.pdf'
-
-    response = FileResponse(open(filename, 'rb'))
-    return response
+        return response
 
 
-def myProjectsView(request):
-
+def my_projects_view(request):
+    """The My Projects View
+        uses for see projects."""
     projects = MyProjects.objects.all()
     context = {
         "projects": projects
@@ -70,7 +79,10 @@ def myProjectsView(request):
     return render(request, 'myapp/my-projects.html', context)
 
 
-def myPojectsViewBot(request):
+def my_bot_projects_view(request):
+    """The My Bot Projects View
+        uses for see my bot projects
+    """
     projects = MyBots.objects.all()
     context = {
         'projects': projects
@@ -79,8 +91,10 @@ def myPojectsViewBot(request):
     return render(request, 'myapp/my-projects-bot.html', context)
 
 
-def contactPage(request):
-
+def contact_page_view(request):
+    """The Contact Page View
+        uses for contact with me
+    """
     if request.POST:
         form = GetInTouchForm(request.POST)
         if form.is_valid():
@@ -92,8 +106,9 @@ def contactPage(request):
                 messages.success(
                     request, 'Xabaringiz muofaqqiyati yuborildi, tez oraqa sizga javob beramiz!')
             else:
-                messages.success(
-                    request, "Xabar yuborishda muammo yuzaga keldi, iltimos keyinroq harakar qilib ko'ring ")
+                mess: str = "Xabar yuborishda muammo yuzaga keldi,"
+                mess += " iltimos keyinroq harakar qilib ko'ring"
+                messages.error(request, mess)
 
             return redirect('contact-me')
 
