@@ -4,7 +4,7 @@ Live website - https://live-mysite.herokuapp.com <hr><br>
 <img style="width:100%;" src="./static/images/intro.jpg">
 
 # Installation
-* 1 - clone repo https://github.com/Muhammadali-Akbarov/mysite.git
+* 1 - clone repo https://github.com/Muhammadali-Akbarov/mysite-web.git
 * 2 - create a virtual environment and activate
 *  - ```pip3 install virtualenv```
 *  - ```virtualenv env``` or ```python -m venv env```
