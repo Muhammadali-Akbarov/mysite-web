@@ -19,6 +19,10 @@
         
         <ul class="navbar-nav">
           <li class="nav-item">
+            <a class="nav-link" href="{% url 'home' %}">Home</a>
+            <!--/.dropdown-menu -->
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="{% url 'about-my-self' %}">About</a>
             <ul class="dropdown-menu mega-menu mega-menu-dark mega-menu-img">
               <li class="mega-menu-content">
@@ -90,7 +94,7 @@
                     </a>
                   </li>
                   <li class="col">
-                    <a class="dropdown-item" href="https://github.com/Muhammadali-Akbarov/eskiz-pkg">
+                    <a class="dropdown-item" target="_blank" href="https://github.com/Muhammadali-Akbarov/eskiz-pkg">
                       <figure class="rounded lift d-none d-lg-block">
                         <img
                           src="https://telegra.ph/file/a41308daa060047b5c989.png"
@@ -101,12 +105,25 @@
                     </a>
                   </li>
                   <li class="col">
-                    <a class="dropdown-item" href="https://github.com/Muhammadali-Akbarov/upay-pkg">
+                    <a class="dropdown-item" target="_blank" href="https://github.com/Muhammadali-Akbarov/upay-pkg">
                       <figure class="rounded lift d-none d-lg-block">
                         <img
                           src="https://telegra.ph/file/992962cba060cd39c4452.png"
                           srcset="
                           https://telegra.ph/file/992962cba060cd39c4452.png
+                          "
+                          alt=""
+                        />
+                      </figure>
+                    </a>
+                  </li>
+                  <li class="col">
+                    <a class="dropdown-item" target="_blank" href="https://github.com/Muhammadali-Akbarov/mysite-web">
+                      <figure class="rounded lift d-none d-lg-block">
+                        <img style="height: 100%;"
+                          src="https://telegra.ph/file/84e5e56e173bbac4a101c.png"
+                          srcset="
+                          https://telegra.ph/file/84e5e56e173bbac4a101c.png
                           "
                           alt=""
                         />
@@ -171,7 +188,6 @@
 
           <li class="nav-item">
             <a class="nav-link" href="{% url 'contact-me' %}">Contact</a>
-
             <!--/.dropdown-menu -->
           </li>
         </ul>
