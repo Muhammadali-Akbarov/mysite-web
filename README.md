@@ -1,6 +1,6 @@
 # About mysite project
 My awesome web site<br>
-Live website - https://live-mysite.herokuapp.com <hr><br>
+Live website - https://muhammadalive.com <hr><br>
 <img style="width:100%;" src="./static/images/intro.jpg">
 
 # Installation
