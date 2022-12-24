@@ -5,12 +5,6 @@
     <div class="container flex-lg-row flex-nowrap align-items-center">
       <div class="navbar-brand w-100">
         <a href="{% url 'home' %}">
-          <img
-            style="height: 10%; width: 10%"
-            src="{% static 'assets/img/logo_me.png' %}"
-            srcset="{% static 'assets/img/logo_me.png' %}"
-            alt="Muhammadali LIVE"
-          />
         </a>
       </div>
       <div class="navbar-collapse offcanvas-nav">
@@ -22,6 +16,7 @@
             aria-label="Close"
           ></button>
         </div>
+        
         <ul class="navbar-nav">
           <li class="nav-item">
             <a class="nav-link" href="{% url 'about-my-self' %}">About</a>
@@ -76,49 +71,55 @@
             </ul>
             <!--/.dropdown-menu -->
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="{% url 'my-projects' %}">Projects</a>
-
-            <ul class="dropdown-menu">
-              <li class="dropdown">
-                <a
-                  class="dropdown-item dropdown-toggle"
-                  href="{% url 'my-projects' %}"
-                  >WEB Applications</a
+          <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://github.com/Muhammadali-Akbarov/">GitHub</a>
+            <ul class="dropdown-menu mega-menu mega-menu-dark mega-menu-img">
+              <li class="mega-menu-content">
+                <ul
+                  class="row row-cols-1 row-cols-lg-6 gx-0 gx-lg-4 gy-lg-2 list-unstyled"
                 >
-                {% comment %}
-                <ul class="dropdown-menu">
-                  <li class="nav-item">
-                    <a class="dropdown-item" href="services.html">Services I</a>
+                  <li class="col">
+                    <a class="dropdown-item" target="_blank" href="https://github.com/Muhammadali-Akbarov/payme-pkg">
+                      <figure class="rounded lift d-none d-lg-block">
+                        <img
+                          src="https://telegra.ph/file/b26ae66907d8935995bd8.png"
+                          srcset="https://telegra.ph/file/b26ae66907d8935995bd8.png"
+                          alt=""
+                        />
+                      </figure>
+                    </a>
                   </li>
-                  <li class="nav-item">
-                    <a class="dropdown-item" href="services2.html"
-                      >Services II</a
-                    >
+                  <li class="col">
+                    <a class="dropdown-item" href="https://github.com/Muhammadali-Akbarov/eskiz-pkg">
+                      <figure class="rounded lift d-none d-lg-block">
+                        <img
+                          src="https://telegra.ph/file/a41308daa060047b5c989.png"
+                          srcset="https://telegra.ph/file/a41308daa060047b5c989.png"
+                          alt=""
+                        />
+                      </figure>
+                    </a>
+                  </li>
+                  <li class="col">
+                    <a class="dropdown-item" href="https://github.com/Muhammadali-Akbarov/upay-pkg">
+                      <figure class="rounded lift d-none d-lg-block">
+                        <img
+                          src="https://telegra.ph/file/992962cba060cd39c4452.png"
+                          srcset="
+                          https://telegra.ph/file/992962cba060cd39c4452.png
+                          "
+                          alt=""
+                        />
+                      </figure>
+                    </a>
                   </li>
                 </ul>
-                {% endcomment %}
+                <!--/.row -->
               </li>
-              <li class="dropdown">
-                <a
-                  class="dropdown-item dropdown-toggle"
-                  href="{% url 'my-projects-bot' %}"
-                  >BOT Applications</a
-                >
-                {% comment %}
-                <ul class="dropdown-menu">
-                  <li class="nav-item">
-                    <a class="dropdown-item" href="about.html">About I</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="dropdown-item" href="about2.html">About II</a>
-                  </li>
-                </ul>
-                {% endcomment %}
-              </li>
+              <!--/.mega-menu-content-->
             </ul>
+            <!--/.dropdown-menu -->
           </li>
-
           <li class="nav-item">
             <a class="nav-link" href="https://t.me/s/ABC_PyEng">Blog</a>
 
@@ -149,7 +150,7 @@
                     <a
                       target="_blank"
                       class="dropdown-item"
-                      href="https://youtu.be/lhKRgHSpbZw"
+                      href="https://www.youtube.com/channel/UCrzmGJAd1alr4LNREQ1AcCQ"
                     >
                       <figure class="rounded lift d-none d-lg-block">
                         <img
@@ -174,6 +175,7 @@
             <!--/.dropdown-menu -->
           </li>
         </ul>
+      </center>
         <!-- /.navbar-nav -->
       </div>
       <!-- /.navbar-collapse -->
